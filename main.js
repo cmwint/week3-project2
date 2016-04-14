@@ -55,13 +55,12 @@ console.log(multiply(multiplyArray));
 //    that are less than six characters.
 console.log("Question 5");
 function filterSixPlus(array){
-	var sixLetterArray = [];
 	for(i=0; i < array.length; i++){
-		if( array[i].length >= 6 ){
-			sixLetterArray.push(array[i]);
+		if( array[i].length < 6 ){
+			array.splice(i, 1);
 		}
 	}
-	return sixLetterArray;
+	return array;
 }
 var sixLetters = ["pancakes", "bacon", "waffles", "OJ", "napkin"];
 console.log(filterSixPlus(sixLetters));
@@ -85,30 +84,65 @@ console.log("Question 6");
 // [°F] = [°C] × 9/5 + 32
 
 console.log("Question 7");
-function convertDegrees(integer, type){
-	if(type === "F to C"){
-		return (integer - 32) * ( 5/9 )
-	}else{
-		return (integer * 1.8) + 32
-	}
-}
-var degree = prompt("Enter a degree in Celsius");
-degree = parseFloat(degree);
-var type = prompt("What conversion would you like? Enter 'F to C' for Fahrenheit to Celsius or 'C to F' for Celsius to Fahrenheit");
-if(type === "F to C"){
-	console.log("You converted " +degree+ " degrees Fahrenheit to Celsius, and got " + convertDegrees(degree, type) + " degrees Celsius");
-}else{
-	console.log("You converted " +degree+ " degrees Celsius to Fahrenheit, and got " + convertDegrees(degree, type) + " degrees Fahrenheit");
-}
+// function convertDegrees(integer, type){
+// 	if(type === "F to C"){
+// 		return (integer - 32) * ( 5/9 )
+// 	}else{
+// 		return (integer * 1.8) + 32
+// 	}
+// }
+// var degree = prompt("Enter a degree in Celsius");
+// degree = parseFloat(degree);
+// var type = prompt("What conversion would you like? Enter 'F to C' for Fahrenheit to Celsius or 'C to F' for Celsius to Fahrenheit");
+// if(type === "F to C"){
+// 	console.log("You converted " +degree+ " degrees Fahrenheit to Celsius, and got " + convertDegrees(degree, type) + " degrees Celsius");
+// }else{
+// 	console.log("You converted " +degree+ " degrees Celsius to Fahrenheit, and got " + convertDegrees(degree, type) + " degrees Fahrenheit");
+// }
 
 // 8. Write a function countBs() that takes a string as its only argument and returns
 //    a number that indicates how many uppercase “B” characters are in the string.
 //    HINT: Google charAt()
+console.log("Question 8");
+function countBs(string){
+	var count = 0;
+	var i = 0;
+	while (i < string.length) {
+		if(string[i] == "B"){
+			count++;
+		}
+		i++
+	}
+	return count
+}
+var stringBs = "hBrigBasrsdfgBasfgbasdglfBghByte";
+console.log(countBs(stringBs));
 
 // 9. Write a function called countChars() that behaves like countBs(), except it takes a
 //    second argument that indicates what character is to be counted.
+console.log("Question 9");
+function countChars(string, character){
+	var count = 0;
+	var i = 0;
+	while (i < string.length) {
+		if(string[i] == character){
+			count++;
+		}
+		i++
+	}
+	return count
+}
+var stringHs = "hBrigHBasrsHfgBasfgbasdgHlfBghByte";
+var character = "H";
+console.log(countChars(stringHs, character));
 
 // 10. Declare a function called ohZero that replaces all of the o's in a string with 0's.
+console.log("Question 10");
+function ohZero(string){
+
+}
+var random = 'osdfjrofgosdfg';
+console.log(ohZero());
 
 // 11. Write a function that prints out the entire "99 Bottles of Beer on the Wall" song lyrics.
 
