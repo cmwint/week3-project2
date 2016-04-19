@@ -23,7 +23,8 @@ function minimum3(array){
 	}
 	return smallest
 };
-console.log("The smallest number is " + minimum3([7, 12, 39, 46, 8, 25]));
+console.log("The smallest number is " + minimum3([7, 12, 39, 4, 8, 25]));
+console.log("The smallest number is " + minimum3([7, 2]));
 
 // 3. Declare a function called sum() that takes an array of numbers as an argument adds them.
 //    i.e. sum([1, 2, 3, 4]) should return 10.
@@ -35,8 +36,8 @@ function sum(array){
 	}
 	return total;
 }
-var addArray = [1, 2, 10, 4];
-console.log(sum(addArray));
+console.log(sum([1, 2, 10, 4]));
+console.log(sum([1, 100, 2, 200, 3, 300, 4, 400]));
 
 // 4. Declare a function called multiply() that takes an array of numbers and multiplies them together.
 //    i.e. multiply([1, 2, 3, 4]) should return 24.
@@ -58,11 +59,12 @@ function filterSixPlus(array){
 	for(i=0; i < array.length; i++){
 		if( array[i].length < 6 ){
 			array.splice(i, 1);
+			i--;
 		}
 	}
 	return array;
 }
-var sixLetters = ["pancakes", "bacon", "waffles", "OJ", "napkin"];
+var sixLetters = ["pancakes", "bacon", "OJ", "waffles", "napkin", "awesome"];
 console.log(filterSixPlus(sixLetters));
 
 // 6. Use a function to ask a user for a temperature in Celsius and converts it to Fahrenheit.
@@ -115,7 +117,7 @@ function countBs(string){
 	}
 	return count
 }
-var stringBs = "hBrigBasrsdfgBasfgbasdglfBghByte";
+var stringBs = "Babbling Babies are usually named Bonnie";
 console.log(countBs(stringBs));
 
 // 9. Write a function called countChars() that behaves like countBs(), except it takes a
@@ -132,17 +134,22 @@ function countChars(string, character){
 	}
 	return count
 }
-var stringHs = "hBrigHBasrsHfgBasfgbasdgHlfBghByte";
+var stringHs = "Hartford, Harrison and Harvard";
 var character = "H";
 console.log(countChars(stringHs, character));
 
 // 10. Declare a function called ohZero that replaces all of the o's in a string with 0's.
 console.log("Question 10");
 function ohZero(string){
-
+	var splitString = string.split("");
+	for(i=0; i<splitString.length; i++){
+		if(splitString[i] === "o" || splitString[i] === "O"){
+			splitString[i] = "0"
+		}
+	}
+	return splitString.join("");
 }
-var random = 'osdfjrofgosdfg';
-console.log(ohZero());
+console.log(ohZero('Soon you will master functions'));
 
 // 11. Write a function that prints out the entire "99 Bottles of Beer on the Wall" song lyrics.
 
